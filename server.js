@@ -47,5 +47,5 @@ server.listen(config.production.port, function(err) {
         return;
     }
 
-    console.log("I'm listening, but wait for me to build first");
+    console.log("I'm listening on", config.production.port, "but wait for me to build first");
 })
