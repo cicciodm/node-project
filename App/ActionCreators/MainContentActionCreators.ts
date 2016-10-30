@@ -3,4 +3,4 @@ import MainContentButtonClickedAction from "./../Actions/MainContentActions/Main
 
 export function mainContentPageButtonClick(): void {
     Dispatcher.dispatch(new MainContentButtonClickedAction());
-}
+}   
