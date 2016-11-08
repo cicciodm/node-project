@@ -25,7 +25,6 @@ abstract class BaseStore extends DispatchListener {
 
     protected emitChange(): void {
         this.listeners.forEach(listener => {
-            console.log("going trhough listeners");
             listener();
         });
     }

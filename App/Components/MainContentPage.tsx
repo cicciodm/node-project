@@ -8,8 +8,9 @@ interface IMainContentPageState {
 
 export default class MainContentPage extends React.Component<{}, IMainContentPageState> {
     constructor() {
-        super(CommonContentStore);
+        super();
         this.state = {clickCount: 0};
+        CommonContentStore.addListener(() => this.setState(this.getState()));
     }
     
     render(): React.ReactElement<{}> {
@@ -24,7 +25,6 @@ export default class MainContentPage extends React.Component<{}, IMainContentPag
     }
 
     getState(): IMainContentPageState {
-        console.log("getting state");
         return {
             clickCount: CommonContentStore.clickCount
         };

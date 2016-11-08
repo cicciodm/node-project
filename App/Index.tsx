@@ -1,4 +1,4 @@
-/// <reference path="./../typings/index.d.ts" />
+/// <reference path="./../typings/typings.d.ts" />
 /* tslint:disable */
 import * as React from "react";
 /* tslint:enable */
