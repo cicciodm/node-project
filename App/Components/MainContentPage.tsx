@@ -8,9 +8,8 @@ interface IMainContentPageState {
 
 export default class MainContentPage extends React.Component<{}, IMainContentPageState> {
     constructor() {
-        super();
+        super(CommonContentStore);
         this.state = {clickCount: 0};
-        CommonContentStore.addListener(() => this.setState(this.getState));
     }
     
     render(): React.ReactElement<{}> {
@@ -18,7 +17,8 @@ export default class MainContentPage extends React.Component<{}, IMainContentPag
             <div>
                 <div>{"This is the main component of the App. Welcome."}</div>
                 <div>{`Click number is ${this.state.clickCount}`}</div>
-                <button onClick={() => this.onButtonClick()}>{"Click!"}</button>
+                <button onClick={() => this.onAddButtonClick()}>{"Add clicks!"}</button>
+                <button onClick={() => this.onRemoveButtonClick()}>{"Remove Clicks!"}</button>
             </div>
         );
     }
@@ -30,7 +30,11 @@ export default class MainContentPage extends React.Component<{}, IMainContentPag
         };
     }
 
-    private onButtonClick(): void {
-        MainContentActionCreators.mainContentPageButtonClick();
+    private onAddButtonClick(): void {
+        MainContentActionCreators.mainContentPageAddButtonClick();
+    }
+
+    private onRemoveButtonClick(): void {
+        MainContentActionCreators.mainContentPageRemoveButtonClick();
     }
 }

@@ -1,5 +1,6 @@
 import BaseStore from "./BaseStore";
-import MainContentButtonClickedAction from "./../Actions/MainContentActions/MainContentButtonClickedAction";
+import MainContentPageAddButtonClickedAction from "./../Actions/MainContentActions/MainContentPageAddButtonClickedAction";
+import MainContentPageRemoveButtonClickedAction from "./../Actions/MainContentActions/MainContentPageRemoveButtonClickedAction";
 
 class CommonContentStore extends BaseStore {
 
@@ -8,16 +9,20 @@ class CommonContentStore extends BaseStore {
     constructor() {
         super();
 
-        this.addActionCallback(MainContentButtonClickedAction, this.onMainButtonClicked);
+        this.addActionCallback(MainContentPageAddButtonClickedAction, this.onAddButtonClicked);
+        this.addActionCallback(MainContentPageRemoveButtonClickedAction, this.onRemoveButtonClicked);
     }
 
     public get clickCount(): number {
         return this._clickCount;
     }
 
-    private onMainButtonClicked(action: MainContentButtonClickedAction): void {
-        console.log("Store has received action");
+    private onAddButtonClicked(action: MainContentPageAddButtonClickedAction): void {
         this._clickCount++;
+    }
+    
+    private onRemoveButtonClicked(action: MainContentPageRemoveButtonClickedAction): void {
+        this._clickCount--;
     }
 }
 

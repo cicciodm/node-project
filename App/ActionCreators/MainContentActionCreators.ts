@@ -1,6 +1,11 @@
 import Dispatcher from "./../Dispatcher/Dispatcher";
-import MainContentButtonClickedAction from "./../Actions/MainContentActions/MainContentButtonClickedAction";
+import MainContentPageAddButtonClickedAction from "./../Actions/MainContentActions/MainContentPageAddButtonClickedAction";
+import MainContentPageRemoveButtonClickedAction from "./../Actions/MainContentActions/MainContentPageRemoveButtonClickedAction";
 
-export function mainContentPageButtonClick(): void {
-    Dispatcher.dispatch(new MainContentButtonClickedAction());
+export function mainContentPageAddButtonClick(): void {
+    Dispatcher.dispatch(new MainContentPageAddButtonClickedAction());
+}
+
+export function mainContentPageRemoveButtonClick(): void {
+    Dispatcher.dispatch(new MainContentPageRemoveButtonClickedAction());
 }   
