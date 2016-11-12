@@ -2,6 +2,7 @@
 ///<reference types="react-dom" />
 ///<reference types="flux" />
 ///<reference types="react-router" />
+///<reference types="history" />
 
 ///<reference path="./custom/webpack.d.ts"/>
 
@@ -15,4 +16,8 @@ declare module "react-dom" {
 
 declare module "react-router" {
     export = ReactRouter;
+}
+
+declare module "history" {
+    export = RouterHistory;
 }
