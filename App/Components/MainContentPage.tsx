@@ -1,16 +1,15 @@
 import * as React from "react";
 import * as MainContentActionCreators from "./../ActionCreators/MainContentActionCreators";
 import CommonContentStore from "./../Stores/CommonContentStore";
+import SmartComponent from "./SmartComponent";
 
 interface IMainContentPageState {
     clickCount: number;
 }
 
-export default class MainContentPage extends React.Component<{}, IMainContentPageState> {
+export default class MainContentPage extends SmartComponent<{}, IMainContentPageState> {
     constructor() {
-        super();
-        this.state = {clickCount: 0};
-        CommonContentStore.addListener(() => this.setState(this.getState()));
+        super(CommonContentStore);
     }
     
     render(): React.ReactElement<{}> {
