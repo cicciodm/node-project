@@ -11,8 +11,9 @@ const styles: any = require("./App.module.less");
 export default class App extends React.Component<{}, {}> {
     render(): React.ReactElement<{}> {
         return <Router history={hashHistory}>
-                   <Route path="/" component={MainContentPage} />
-                   <Route path="/aboutme" component={AboutMePage} />
+                   <Route path="/" component={MainContentPage}>
+                       <Route path="/aboutme" component={AboutMePage} />
+                   </Route>
                </Router>;
     }
 }
